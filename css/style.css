@@ -1,247 +1,362 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
+* {
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+html,
+body {
+  position: relative;
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  background: #eee;
+  font-size: 14px;
   margin: 0;
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+/* 상단 메뉴바 */
+.header {
+  width: 100%;
+  height: 50px;
+  max-width: 100%;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+nav {
+  font-size: 12pt;
+  font-family: 'PT Sans', Arial, Sans-serif;
+  position: relative;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
+nav ul {
   padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
+  margin: 0 auto;
   width: auto;
+  text-align: right;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+nav li {
+  display: inline-block;
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+nav li a {
+  color: white;
+  padding: 16px 16px;
+  text-decoration: none;
+  line-height: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  cursor: pointer;
 }
 
-.clearfix::after {
-  clear: both;
+nav li a:hover {
+  color: #FFD400;
+  font-weight:normal;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+nav li:last-child a {
+  border-right: 0;
 }
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+nav a:hover, nav a:active {
 }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+nav a#pull {
+  display: none;
 }
 
+.active-nav {
+  color: #FFD400;
+}
+
+/* scroll event */
+.header.scroll {
+  background-color: rgba(255,255,255,0.8);
+}
+
+.header.scroll nav li a {
+  color: black;
+}
+.header.scroll nav li a:hover {
+  color: #FFD400;
+}
+
+/* section-1 ============================================== */
+
+.section-1 {
+  width: 100%;
+  height: 80vh;
+  background-color: #CED4DA;
+  background-size: cover;
+}
+
+.section-1-wrap {
+  padding: 200px 0 0 100px;
+}
+
+.section-1-title {
+  font-size: 100px;
+  color: #FFFFFF;
+  font-weight: 900;
+}
+
+.section-1-title-sub {
+  font-size: 30px;
+  color: #FFFFFF;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.section-1-description {
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+/* section-2 ============================================== */
+
+.section-2 {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  background-size: cover;
+}
+
+.section-2 .title-wrap {
+  padding:50px 0 20px 0;
+}
+
+.portfolio-ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; /* 아이템 사이 간격 */
+}
+.portfolio-li {
+  box-sizing: border-box;
+  padding: 0 25px;
+  margin-bottom: 20px; /* Space between rows */
+}
+
+.portfolio-item {
+  display: block;
+  position: relative;
+  text-decoration-line: none;
+  color: black;
+}
+
+.portfolio-item:active, .portfolio-item:visited {
+  color: black; /* 링크 글자색 유지 */
+}
+
+.portfolio-item-wrap {
+  position: relative;
+}
+
+.portfolio-thumbnail {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.portfolio-thumbnail-badge-best {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #F24F43;
+  border-radius: 999px;
+  display: inline-block;
+  padding: 4px 8px 4px 8px;
+  position: absolute;
+  top:12px;
+  left: 12px;
+}
+
+.portfolio-thumbnail-badge-new {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: blue;
+  border-radius: 999px;
+  display: inline-block;
+  padding: 4px 8px 4px 8px;
+  position: absolute;
+  top:12px;
+  left: 12px;
+}
+
+.portfolio-title {
+  padding: 22px 0 22px 0;
+  font-size: 16px;
+}
+
+.portfolio-item-badge-wrap {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.portfolio-item-badge-inner {
+  padding-right: 28px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 그라데이션 효과 추가 */
+.portfolio-item-badge-inner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px; /* 그라데이션 폭 조정 */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF);
+  pointer-events: none;
+}
+
+.portfolio-item-badge-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-item-badge {
+  font-size: 11px;
+  color: white;
+  display: inline-block;
+  padding: 0 10px;
+  margin-right: 3px;
+  border-radius: 4px;
+  line-height: 30px;
+  font-weight: 400;
+  background-color: #acacac;
+}
+
+/* section-3 ============================================== */
+
+.section-3 {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/section2.png") no-repeat center center;
+  background-size: cover;
+}
+
+/* section-4 ============================================== */
+
+.section-4 {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/section1.png") no-repeat center center;
+  background-size: cover;
+}
+
+/* footer ============================================== */
+
+footer {
+  padding:40px 100px 40px 100px;
+  background-color: #FFFFFF;
+  font-size: 11px;
+}
+
+.footer-wrap {
+  width: 100%;
+  position: relative;
+}
+.footer-ul {
+  display: flex;
+  list-style-type: none;
+}
+
+
+.footer-ul li {
+  width: 35%;
+}
+
+.footer-ul > li:last-child {
+  width: 30%;
+  text-align: right;
+}
+
+
+.footer-ul p {
+  line-height: 1.5;
+}
+
+
+/* 반응형 ============================================== */
+
+
+@media (max-width: 768px) {
+
+  .section-1-wrap {
+    padding: 100px 0 0 50px;
+  }
+
+  .section-1-title {
+    font-size: 60px;
+    color: #FFFFFF;
+    font-weight: 900;
+  }
+
+  .section-1-title-sub {
+    font-size: 25px;
+    color: #FFFFFF;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .section-1-description {
+    padding-right: 15px;
+    font-size: 12px;
+    color: #FFFFFF;
+  }
+
+
+  .portfolio-li {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 작은 화면에서는 더 좁은 열로 */
+  }
+
+  .section-2 .title-wrap {
+    padding:30px 0 20px 0;
+  }
+
+  .section-2 .portfolio-title {
+    font-size: 20px;
+  }
+
+  footer {
+    padding:20px 30px 20px 30px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+  nav li a {
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+
+  .footer-ul {
+    display: block;
+  }
+
+  .footer-ul li {
+    width: 100%;
+    margin-top:10px;
+  }
+  .footer-ul > li:last-child {
+    width: 100%;
+    text-align: left;
+  }
+
+  .copyright_nbsp {
+    display: none;
+  }
+}

@@ -4,30 +4,141 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>RNBL 9월 출석왕</title>
+  <meta name="description" content="RNBL 9월 출석왕">
 
-  <meta property="og:title" content="">
+  <meta property="og:title" content="RNBL 9월 출석왕">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <meta property="og:image:alt" content="">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <!--jquery-->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/constants.js"></script>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!--animation-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
+<div class="header" >
+  <nav class="clearfix">
+    <ul class="clearfix">
+      <li><a onclick="navMove('section-1')" id="nav_menu_1"></a></li>
+      <li><a onclick="navMove('section-2')" id="nav_menu_2"></a></li>
+      <li><a onclick="navMove('section-3')" id="nav_menu_3"></a></li>
+      <li><a onclick="navMove('section-4')" id="nav_menu_4"></a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="section-1" id="section-1">
+  <div class="section-1-wrap">
+    <p class="section-1-title" data-aos="fade-right">미온</p>
+    <p class="section-1-title-sub" data-aos="fade-up">:: 아름답고 따뜻한 (美溫)</p>
+    <p class="section-1-description" data-aos="fade-up">소비자에게 친숙한 UI/UX 디자인으로 다가갑니다.</p>
+    <p class="section-1-description" data-aos="fade-up">빠른 설치와 다양한 디자인으로 새로운 나만의 홈페이지를 만들어드립니다.</p>
+  </div>
+</div>
+
+<div class="section-2" id="section-2">
+
+  <div class="title-wrap">
+    <h2>PORTFOLIO</h2>
+  </div>
+
+  <ul class="portfolio-ul">
+    <li class="portfolio-li" data-aos="fade-up" data-aos-delay="0">
+      <a href="./portfolio/basic/index.html" class="portfolio-item" target="_blank">
+        <div class="portfolio-item-wrap">
+          <img class="portfolio-thumbnail" src="./img/Planning_thumbnail.jpg" alt="portfolio_basic_thumbnail"/>
+          <span class="portfolio-thumbnail-badge-best">BEST</span>
+        </div>
+        <h3 class="portfolio-title">BASIC</h3>
+      </a>
+      <div class="portfolio-item-badge-wrap">
+        <div class="portfolio-item-badge-inner">
+          <span class="portfolio-item-badge">빠른적용</span>
+          <span class="portfolio-item-badge">기업소개</span>
+          <span class="portfolio-item-badge">가장많이찾는</span>
+        </div>
+      </div>
+    </li>
+    <li class="portfolio-li" data-aos="fade-up" data-aos-delay="100">
+      <a href="./portfolio/skin/index.html" class="portfolio-item" target="_blank">
+        <div class="portfolio-item-wrap">
+          <img class="portfolio-thumbnail" src="./img/Planning_thumbnail.jpg" alt="portfolio_basic_thumbnail"/>
+          <span class="portfolio-thumbnail-badge-best">BEST</span>
+        </div>
+        <h3 class="portfolio-title">COMPANY</h3>
+      </a>
+      <div class="portfolio-item-badge-wrap">
+        <div class="portfolio-item-badge-inner">
+          <span class="portfolio-item-badge">기업소개</span>
+          <span class="portfolio-item-badge">기본 홈페이지</span>
+          <span class="portfolio-item-badge">제품소개</span>
+          <span class="portfolio-item-badge">공지사항</span>
+        </div>
+      </div>
+    </li>
+    <li class="portfolio-li" data-aos="fade-up" data-aos-delay="200">
+      <a href="./portfolio/skin/index.html" class="portfolio-item" target="_blank">
+        <div class="portfolio-item-wrap">
+          <img class="portfolio-thumbnail" src="./img/Planning_thumbnail.png" alt="portfolio_basic_thumbnail"/>
+          <span class="portfolio-thumbnail-badge-new">NEW</span>
+        </div>
+        <h3 class="portfolio-title">SKIN</h3>
+      </a>
+      <div class="portfolio-item-badge-wrap">
+        <div class="portfolio-item-badge-inner">
+          <span class="portfolio-item-badge">피부과이벤트</span>
+          <span class="portfolio-item-badge">정보전달성</span>
+          <span class="portfolio-item-badge">랜딩페이지</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="section-3" id="section-3">
+  <p></p>
+</div>
+
+<div class="section-4" id="section-4">
+  <p></p>
+</div>
 
 </body>
-
+<footer>
+  <div class="footer-wrap">
+    <ul class="footer-ul">
+      <li>
+        <p>사업자명 : (주)미온</p>
+        <p>주소 : 경기도 김포시</p>
+        <p>우편번호 : 000000</p>
+      </li>
+      <li>
+        <p>광고책임자 : ㅇㅇㅇㅇ</p>
+        <p>대표번호 : 0000-0000</p>
+        <p>사업자번호 : 000-00-00000</p>
+      </li>
+      <li>
+        <p class="copyright_nbsp">&nbsp;</p>
+        <p class="copyright_nbsp">&nbsp;</p>
+        <p class="copyright">Copyright © 2024 DS design. All rights reserved.</p>
+      </li>
+    </ul>
+  </div>
+</footer>
 </html>
