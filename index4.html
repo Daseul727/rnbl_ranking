@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNBL 9월 출석왕</title>
+  <meta name="description" content="RNBL 9월 출석왕">
+
+  <meta property="og:title" content="RNBL 9월 출석왕">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <!--jquery-->
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/constants.js"></script>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!--animation-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+<body>
+
+<div class="section-2" id="section-2">
+
+  <div class="title-wrap">
+    <h2>PORTFOLIO</h2>
+  </div>
+
+  <ul class="portfolio-ul">
+    <li class="portfolio-li" data-aos="fade-up" data-aos-delay="100">
+      <a href="./portfolio/basic/index.html" class="portfolio-item" target="_blank">
+        <div class="portfolio-item-wrap">
+          <img class="portfolio-thumbnail" src="./img/Planning_thumbnail.jpg" alt="portfolio_basic_thumbnail"/>
+          <span class="portfolio-thumbnail-badge-best">BEST</span>
+        </div>
+        <h3 class="portfolio-title">BASIC</h3>
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+
+<script>
+  // 주어진 JSON 데이터
+  const list = {
+    "name1": 4,
+    "name2": 3,
+    "name3": 7,
+    "name4": 2,
+    "name5": 6
+  };
+
+  // 참여 횟수에 따라 정렬된 배열을 생성
+  const sortedParticipants = Object.entries(list).sort((a, b) => b[1] - a[1])
+
+  // HTML 요소에 추가
+  const participantList = document.getElementById('portfolio-ul')
+
+  sortedParticipants.forEach(participant => {
+    const listItem = document.createElement('<li class="portfolio-li" data-aos="fade-up" data-aos-delay="0">\n' +
+      '      <a href="./portfolio/basic/index.html" class="portfolio-item" target="_blank">\n' +
+      '        <div class="portfolio-item-wrap">\n' +
+      '          <img class="portfolio-thumbnail" src="./img/Planning_thumbnail.jpg" alt="portfolio_basic_thumbnail"/>\n' +
+      '          <span class="portfolio-thumbnail-badge-best">BEST</span>\n' +
+      '        </div>\n' +
+      '        <h3 class="portfolio-title">${participant[0]}${participant[1]}회 참여</h3>\n' +
+      '      </a>\n' +
+      '    </li>')
+    participantList.appendChild(listItem);
+  })
+
+</script>
+
+</body>
+</html>
