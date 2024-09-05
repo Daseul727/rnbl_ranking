@@ -105,6 +105,21 @@ body {
   text-align: center;
 }
 
+
+.detail {
+  text-decoration: none;
+  color: inherit;
+}
+
+.detail:visited {
+  color: inherit;
+}
+
+.detail:hover, .detail:active {
+  text-decoration: none; /* 마우스를 올리거나 클릭할 때도 밑줄 유지 */
+  color: inherit; /* 색상 변화 없음 */
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 40px;
