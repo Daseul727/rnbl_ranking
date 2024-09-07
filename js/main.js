@@ -6,11 +6,6 @@ $(document).ready(function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   document.title = MAIN_TITLE;
-
-  document.getElementById("nav_menu_1").text = NAV_MENU_1
-  document.getElementById("nav_menu_2").text = NAV_MENU_2
-  document.getElementById("nav_menu_3").text = NAV_MENU_3
-  document.getElementById("nav_menu_4").text = NAV_MENU_4
 });
 
 
