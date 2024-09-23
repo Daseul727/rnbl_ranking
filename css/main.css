@@ -105,10 +105,15 @@ body {
   text-align: center;
 }
 
-
 .detail {
   text-decoration: none;
   color: inherit;
+  display: inline-block; /* 버튼 모양을 위한 블록 스타일 */
+  margin-top:5px;
+  padding: 5px 10px; /* 버튼 모양을 위한 패딩 */
+  border: 2px solid #FFFFFF; /* 하얀색 테두리 */
+  border-radius: 8px; /* 모서리를 둥글게 */
+  transition: background-color 0.3s ease, color 0.3s ease; /* 효과 추가 */
 }
 
 .detail:visited {
@@ -116,8 +121,10 @@ body {
 }
 
 .detail:hover, .detail:active {
-  text-decoration: none; /* 마우스를 올리거나 클릭할 때도 밑줄 유지 */
+  text-decoration: none; /* 마우스를 올리거나 클릭할 때 밑줄 유지 */
   color: inherit; /* 색상 변화 없음 */
+  background-color: rgba(255, 255, 255, 0.2); /* 마우스 오버 시 약간의 배경색 변화 */
+  border-color: #FFFFFF; /* 테두리 색상 유지 */
 }
 
 @media (max-width: 768px) {
